@@ -268,7 +268,7 @@ trait SeoManagerTrait
                     if (in_array($paramsArray[1], $selectedColumns)) {
                         $mappedTitle = (new $model);
                         if ($routeParams) {
-                            $mappedTitle = $mappedTitle->where($findBy, $routeParams[$paramsArray[0]])->first();
+                            $mappedTitle = $mappedTitle->where($findBy, $routeParams[$paramsArray[0]]->{$findBy})->first();
                         } else {
                             $mappedTitle = $mappedTitle->first();
                         }
